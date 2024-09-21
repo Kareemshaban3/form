@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="hero">
+        <div id="form" class="form-box" >
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()" >Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()" >Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="login-reg-img/fb.png" alt="">
+                <img src="login-reg-img/gp.png" alt="">
+                <img src="login-reg-img/tw.png" alt="">
+            </div>
+            <form id="login"  class="input-group">
+                <input type="email" id="User" class="input-field" placeholder="User id"  >
+                <input type="password" id="Password"  class="input-field" placeholder="password"  >
+                <input type="checkbox" class="check-box "> <span>Remember Password</span>
+                <input type="submit"  class="submit-btn" >
+            </form>
+            <form id="Register" class="input-group">
+                <input type="text" id="User" class="input-field" placeholder="User id" required >
+                <input type="email" id="Email"  class="input-field" placeholder="Email id" required >
+                <input type="password" id="password"  class="input-field" placeholder="password" required >
+                <input type="checkbox" class="check-box "> <span>I agree to the terms & conditions</span>
+                <button type="button" class="submit-btn" > Register </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let log = document.getElementById("login")
+        let red = document.getElementById("Register")
+        let btn = document.getElementById("btn")
+
+        function register(){
+            log.style.left = "-400px"
+            red.style.left = "50px"
+            btn.style.left = "110px"
+        }
+        function login(){
+            log.style.left = "50px"
+            red.style.left = "450px"
+            btn.style.left = "0px"
+        }
+
+        let fOrm = document.getElementById("form") 
+        let UserName = document.getElementById("User")
+        let PassWord = document.getElementById("Password")
+        fOrm.onsubmit = function(){
+            if (UserName.value === "") {
+                return false
+            }else if (UserName.value = /\w+(@)(google).(com)/ig) {
+                return false
+            }else{
+                return true
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
